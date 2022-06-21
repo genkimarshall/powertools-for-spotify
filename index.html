@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang='en'>
+<head>
+  <meta charset='utf-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <title>Powertools for Spotify</title>
+  <link rel='icon' href='spotify_icon.png'>
+  <link rel='stylesheet' href='index.css'>
+</head>
+<body>
+  <div>
+    <h1 onclick='javascript:resetApp();' style='margin-top: 1.5rem; font-weight: 200; font-size: 1.8rem;'>
+      Powertools for <img src='spotify_logo.png' style='vertical-align: middle; height: 2.9rem; padding-bottom: .4rem;' alt='Spotify'>
+    </h1>
+    <noscript>
+      <p>
+        This page is an "app", that requires JavaScript to work. If you're concerned about JavaScript, I understand.
+        Please note though, that this page's JavaScript is very simple. No external libraries are used. No trackers are used.
+        All the code is in one file (/index.js). The code is not obfuscated/minimized. Even then it is only ~700 lines.
+      </p>
+    </noscript>
+  </div>
+  <div id='divSplash'>
+    <p>A motley collection of free tools to examine and edit your Spotify collection.</p>
+    <ul style='text-align: left; font-style: italic;'>
+      <li>Search across multiple playlists at a time,</li>
+      <li>Find duplicate tracks that differ only by release-type (e.g. single vs. album),</li>
+      <li>Find tracks you've liked but aren't in any playlists,</li>
+      <li>Find tracks you've added in the past week,</li>
+      <li>Create playlists with the above search results,</li>
+      <li>Sort playlist tracks by Album Artist followed by Release Date,</li>
+      <li>and more!</li>
+    </ul>
+    <button id='btnStart'>Connect with Spotify</button>
+  </div>
+
+  <div id='divApp' style='display: none;'>
+    <div>
+      <h3 id='headerLoggedInAs' style='font-weight: 500;'></h3>
+      <select id='selectRun'>
+        <option value='optRunShowDuplicateEach'>Show duplicate tracks within playlists</option>
+        <option value='optRunShowDuplicateSum'>Show tracks appearing in multiple different playlists</option>
+        <option value='optRunShowDuplicateFuzzy'>Show tracks that differ only by release-type</option>
+        <option value='optRunShowUniqueEach'>Show tracks unique to each playlist</option>
+        <option value='optRunShowUniqueSum'>Show tracks unique to the group of playlists</option>
+        <option value='optRunShowRecentlyAdded'>Show recently-added tracks</option>
+        <option value='optRunSearch'>Search tracks</option>
+        <option value='optRunSortTracksA'>Sort tracks by album-artist -> release-date</option>
+        <option value='optRunSortTracksB'>Sort tracks by release-date -> album-artist</option>
+      </select>
+      <input id='inputSearch' placeholder='Track Name or Artist Name' style='display: none;'></input>
+      <select id='selectRecentlyAddedFilter' style='display: none;'>
+        <option value='' disabled selected hidden>&lt;Filter option&gt;</option>
+        <option value='1day'>Added in last 24 hours</option>
+        <option value='1week'>Added in last week</option>
+        <option value='2week'>Added in last 2 weeks</option>
+        <option value='4week'>Added in last 4 weeks</option>
+        <option value='10'>10 most-recently added</option>
+        <option value='20'>20 most-recently added</option>
+        <option value='50'>50 most-recently added</option>
+        <option value='100'>100 most-recently added</option>
+      </select>
+      <button id='btnRun'>Run</button><br><br>
+      <button id='btnPlaylistsShow' style='display: none;'></button>
+      <table id='tablePlaylists'>
+        <thead id='theadPlaylists'>
+          <tr>
+            <th><input type='checkbox' id='checkboxPlaylistsToggleAll'></input></th>
+            <th>Name</th>
+            <th>Owner</th>
+            <th>Tracks</th>
+            <th>Public?</th>
+            <th>Collab?</th>
+          </tr>
+        </thead>
+        <tbody id='tbodyPlaylists'></tbody>
+      </table>
+    </div>
+    <div style='margin-top: 1rem;'>
+      <div id='divStatus' style='font-style: italic;'></div>
+      <h3 id='headerResults' style='display: none;'>Results</h3>
+      <table id='tableResults'>
+        <thead>
+          <tr id='theadtrResults'>
+          </tr>
+        </thead>
+        <tbody id='tbodyResults'></tbody>
+      </table>
+    </div>
+  </div>
+  
+  <div style='margin-top: 2rem; font-size: 0.7rem;'>
+    <span>Made by <a target='_blank' href='https://linktr.ee/genkimarshall'>Genki Marshall</a>. No affiliation with Spotify.</span>
+    <span>Source code on <a target='_blank' href='https://github.com/genkimarshall/powertools-for-spotify'>GitHub</a>.</span><br>
+    <span style='font-style: italic;'>
+      Privacy Policy <a target='_blank', href='https://github.com/genkimarshall/powertools-for-spotify/blob/main/PRIVACY.md'>here</a>.
+      To disconnect this app from your account, go <a target='_blank', href='https://www.spotify.com/us/account/apps/'>here</a>.
+    </span>
+  </div>
+
+  <script src='index.js'></script>
+</body>
+</html>

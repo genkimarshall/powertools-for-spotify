@@ -1,0 +1,7 @@
+# Privacy Policy
+
+This tool uses [Spotify OAuth](https://developer.spotify.com/documentation/general/guides/authorization/) to connect to your Spotify account. This means this tool does not handle your password or have control over your account. You can remove this connection anytime at [Spotify account settings](https://www.spotify.com/us/account/apps/).
+
+This tool uses the [Spotify API](https://developer.spotify.com/documentation/web-api/) to read your playlists (public, private, collaborative) and your Liked Songs. This is to support the searching features available (for example, find duplicate tracks, or find songs you have liked but are not in any playlists). It also has the ability to modify your playlists, in order to support the optional sort-playlist and create-playlist features.
+
+This tool makes all of its calls directly to Spotify, straight from your local browser. It does not have a backend server. This tool does not store any of your personal data, neither locally nor remotely. This tool does not track you. However, it is important to note that Spotify itself does provide (only) the following data to me: Number of Daily Active Users, Number of Monthly Active Users, Number of API Requests, Number of Users Per Country. Note that this data is aggregate/anonymized.

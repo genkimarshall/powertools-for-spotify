@@ -1,0 +1,66 @@
+body {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  text-align: center;
+  font-family: Sans-Serif;
+}
+
+@media (min-width: 800px) {
+  body {
+    max-width: 600px;
+  }
+}
+
+@media (min-width: 1200px) {
+  body {
+    max-width: 700px;
+  }
+}
+
+button, input {
+  font-size: .9rem;
+}
+
+select {
+  max-width: 12rem;
+  font-size: 1rem;
+}
+
+table {
+  width: 100%;
+  text-align: left;
+  border-collapse: collapse;
+}
+
+tr {
+  border: solid lightgray;
+  border-width: 1px 0;
+}
+
+td {
+  max-width: 10rem;
+}
+
+a.spotifyLink {
+  text-decoration: none;
+  color: #1DB954;
+}
+
+a.spotifyLink:hover {
+  text-decoration: underline;
+}
+
+#btnStart {
+  padding: .5rem .5rem .5rem 2.2rem;
+  border-radius: .8rem;
+  color: #1DB954;
+  font-size: 1.1rem;
+  background-color: white;
+  background-image: url('spotify_icon.png');
+  background-position: .4rem .4rem;
+  background-repeat: no-repeat;
+  background-size: 1.5rem 1.5rem;
+  box-shadow: 2px 2px 5px 5px rgba(0, 0, 0, .05);
+}
